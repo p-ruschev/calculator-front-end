@@ -1,0 +1,50 @@
+mat-toolbar {
+
+    .example-spacer {
+        flex: 1 1 auto;
+    }
+}
+
+button {
+    padding: 0 10px 0 10px;
+    margin: 0;
+
+    mat-icon {
+        scale: 1.8;
+    }
+
+    span {
+        font-size: 18px;
+        padding-left: 4px;
+    }
+}
+
+.logo {
+    font-size: 20px;
+}
+
+.theme {
+    margin: 0 2px;
+    scale: 0.6;
+}
+
+@media only screen and (max-width: 440px) {
+    button {
+        padding: 0 2px 0 2px;
+        margin: 0;
+
+        mat-icon {
+            scale: 1.6;
+        }
+
+        span {
+            font-size: 14px;
+            padding-left: 2px;
+        }
+    }
+
+    .logo {
+        font-size: 14px;
+    }
+
+}

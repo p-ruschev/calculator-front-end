@@ -1,0 +1,76 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import '@angular/material/theming';
+@include mat-core();
+
+$mat-theming-primary: mat-palette($mat-indigo);
+$mat-theming-accent: mat-palette($mat-pink, A200, A100, A400);
+$mat-theming-warn: mat-palette($mat-red);
+$white: #ffffff;
+$black: #000000;
+
+$mat-theming-theme-light: mat-light-theme($mat-theming-primary, $mat-theming-accent, $mat-theming-warn);
+$mat-theming-theme-dark: mat-dark-theme($mat-theming-primary, $mat-theming-accent, $mat-theming-warn);
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.snackbar-error {
+    color: rgb(235, 90, 90)
+}
+.success .mat-snack-bar-container {
+    color: rgb(72, 230, 156)
+}
+
+.theme-dark {
+    @include angular-material-theme($mat-theming-theme-dark);
+
+    .custom-color {
+        color: white;
+    }
+
+    mat-label {
+        color: white;
+
+    }
+
+
+    p {
+        a:link {
+            color: white;
+        }
+
+        a:visited {
+            color: white;
+        }
+
+    }
+}
+
+.theme-light {
+    @include angular-material-theme($mat-theming-theme-light);
+
+    .custom-color {
+        color: black;
+    }
+
+    p {
+        a:link {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+        a:visited {
+            color: rgba(0, 0, 0, 0.87);
+        }
+
+    }
+
+}

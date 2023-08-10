@@ -1,0 +1,18 @@
+<div class="container" (click)="btnPress()"
+  [ngStyle]="button.isActive === true ? {'background-color' : '#b33030'} : null"
+  [ngClass]="clicked ? 'clicked' : 'none'">
+  <mat-icon *ngIf="button.icon">{{button.icon}}</mat-icon>
+  <div [matMenuTriggerFor]="powerMenu" *ngIf="button.type === 'power'" class="power">x<span>n</span><div *ngIf="powerModes" class="power-count">({{powerModes}})</div></div>
+  <div [matMenuTriggerFor]="functionMenu" *ngIf="button.type === 'function'" class="function">f<span>(x)</span></div>
+  <div *ngIf="!button.icon || button.symbol" class="symbol" [innerHTML]="button.symbol">
+  </div>
+</div>
+<mat-menu #functionMenu="matMenu" class="variables">
+  <button type="button" (click)="addVariable(variable)" *ngFor="let variable of variables"
+    mat-menu-item>{{variable}}</button>
+  <button type="button" mat-menu-item (click)="openAddVarDialog()"><mat-icon>add</mat-icon></button>
+</mat-menu>
+<mat-menu #powerMenu="matMenu" class="variables">
+  <button type="button" mat-menu-item (click)="addPower()"><mat-icon>add</mat-icon></button>
+  <button type="button" mat-menu-item (click)="removePower()"><mat-icon>remove</mat-icon></button>
+</mat-menu>

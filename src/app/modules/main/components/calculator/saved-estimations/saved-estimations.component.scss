@@ -1,0 +1,94 @@
+    .saved-container {
+        overflow: auto;
+        overflow-x: hidden;
+        height: clamp(208px, 33vh, 330px);
+    }
+
+    .saved-container::-webkit-scrollbar {
+        width: 6px;
+        background-color: rgba(170, 170, 170, 0.2);
+        border-radius: 6px;
+    }
+
+    .saved-container::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: rgba(170, 170, 170, 0.6);
+    }
+
+
+    [menu-opened="true"] {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .estimation-element {
+        padding: 6px 0;
+
+        .comment {
+            overflow-x: auto;
+            margin: 5px 0;
+            padding: 0 16px;
+        }
+
+        &:hover {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .formula-result {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 28px;
+            font-size: 20px;
+            padding: 0 6px;
+            margin-left: 2px;
+
+            .text {
+                white-space: nowrap;
+                max-width: 300px;
+                overflow: hidden;
+                white-space: nowrap;
+            }
+
+            .text:hover {
+                overflow-x: auto;
+            }
+
+            .text::-webkit-scrollbar {
+                height: 6px;
+                background-color: rgba(170, 170, 170, 0.2);
+                border-radius: 6px;
+            }
+
+            .text::-webkit-scrollbar-thumb {
+                border-radius: 6px;
+                background-color: rgba(170, 170, 170, 0.6);
+            }
+
+
+            .container-btns {
+                cursor: pointer;
+
+                span {
+                    padding: 0 2px;
+                }
+
+                mat-icon {
+                    margin-left: 3px;
+                    cursor: pointer
+                }
+            }
+
+            span {
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .loading-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: clamp(140px, 30vh, 360px);
+        height: 306px;
+    }

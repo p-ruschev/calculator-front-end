@@ -1,0 +1,20 @@
+<div class="container">
+    <mat-dialog-content>
+        <div class="text">Create custom, which will exist until you refresh this page or exit the calculator's page</div>
+        <form [formGroup]="form">
+            <mat-form-field appearance="outline">
+                <mat-label>Custom variable</mat-label>
+                <input matInput formControlName="customVariable" type="text">
+                <mat-error *ngIf="form.controls['customVariable'].hasError('required')">This field is required</mat-error>
+                <mat-error *ngIf="form.controls['customVariable'].hasError('pattern')">This field should consist only of lower/upper case english or cyrillic alphabet characters, additionally you can add dash(-)</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-dialog-content>
+    <div mat-dialog-actions>
+        <button type="button" mat-raised-button [mat-dialog-close]="false">Close</button>
+        <button 
+            mat-raised-button
+            [disabled]="!form.valid"
+            [mat-dialog-close]="form.controls['customVariable'].value">Add</button>
+    </div>
+</div>

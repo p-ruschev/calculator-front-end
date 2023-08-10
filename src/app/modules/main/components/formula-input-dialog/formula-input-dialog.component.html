@@ -1,0 +1,23 @@
+<div class="container">
+    <mat-dialog-content>
+        <div class="text">You can test or save this formula</div>
+        <div class="text formula" [innerHTML]="data.input.join('')">
+        </div>
+        <form [formGroup]="form">
+            <mat-form-field *ngFor="let variable of variables" appearance="outline">
+                <mat-label>{{variable}}</mat-label>
+                <input matInput [required]="false" [formControlName]="variable" placeholder="number">
+                <mat-error *ngIf="form.controls[variable].hasError('required')">This field is required</mat-error>
+            </mat-form-field>
+        </form>
+        <div *ngIf="evaluationErrorMsg" class="evaluation-error">{{evaluationErrorMsg}}</div>
+        <div *ngIf="result" class="test-result">
+            Result: {{result}}
+        </div>
+    </mat-dialog-content>
+    <div mat-dialog-actions>
+        <button mat-raised-button mat-dialog-close cdkFocusInitial="'false'">Close</button>
+        <button mat-raised-button cdkFocusInitial="'true'" [disabled]="form.invalid" (click)="test()">Test</button>
+        <button mat-raised-button mat-dialog-close cdkFocusInitial="'false'" (click)="save()">Save</button>
+    </div>
+</div>

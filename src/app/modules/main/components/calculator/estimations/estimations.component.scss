@@ -1,0 +1,74 @@
+.tab-content {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: auto;
+    height: clamp(208px, 33vh, 330px);
+}
+
+.tab-content::-webkit-scrollbar {
+    width: 6px;
+    background-color: rgba(170, 170, 170, 0.2);
+    border-radius: 6px;
+}
+
+.tab-content::-webkit-scrollbar-thumb {
+    border-radius: 6px;
+    background-color: rgba(170, 170, 170, 0.6);
+}
+
+[menu-opened="true"] {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.history-element {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 28px;
+    font-size: 20px;
+    padding: 6px;
+    margin-left: 2px;
+
+    .text {
+        white-space: nowrap;
+        max-width: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    .text:hover {
+        overflow-x: auto;
+    }
+
+    .text::-webkit-scrollbar {
+        height: 6px;
+        background-color: rgba(170, 170, 170, 0.2);
+        border-radius: 6px;
+    }
+
+    .text::-webkit-scrollbar-thumb {
+        border-radius: 6px;
+        background-color: rgba(170, 170, 170, 0.6);
+    }
+
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    .container-btns {
+        cursor: pointer;
+
+        span {
+            padding: 0 2px;
+        }
+
+        mat-icon {
+            margin-left: 3px;
+            cursor: pointer
+        }
+    }
+
+    span {
+        padding: 0 10px;
+    }
+}

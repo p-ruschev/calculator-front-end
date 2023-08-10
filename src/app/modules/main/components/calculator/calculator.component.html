@@ -1,0 +1,67 @@
+<div class="container">
+    <mat-card class="calculator-frame">
+        <div class="screen">
+            <div class="container-history">
+                <div class="history-header">
+                    <div>
+                        <mat-icon (click)="openHelp()" matTooltip="Show information about using this calculator"
+                            matTooltipShowDelay="1000">info_outlined</mat-icon>
+                    </div>
+                    <div>
+                        <input [(ngModel)]="searchValue" class="custom-color search" placeholder="Search " type="text">
+                    </div>
+                    <div>
+                        <mat-icon (click)="clearCurrentHistory()"
+                            matTooltip="Currently you can only bulk delete the history from current estimations tab"
+                            matTooltipShowDelay="1000">delete_outlined</mat-icon>
+                        <mat-icon (click)="showHistory = !showHistory" matTooltip="Show and hide history tabs"
+                            matTooltipShowDelay="1000">history</mat-icon>
+                    </div>
+                </div>
+                <mat-tab-group @enterAnimation dynamicHeight animationDuration="0ms" *ngIf="showHistory"
+                    class="history">
+                    <mat-tab label="Estimations">
+                        <ng-template matTabContent>
+                            <app-estimations [searchValue]="searchValue" [isLogged]="userService.isLogged"
+                                [history]="history"
+                                (onSaveEstimation)="openSaveEstimationDialog($event)"></app-estimations>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab *ngIf="userService.isLogged" label="Saved">
+                        <ng-template matTabContent>
+                            <app-saved-estimations [searchValue]="searchValue"
+                                (onPickEstimation)="pickExpression($event)"></app-saved-estimations>
+                        </ng-template>
+                    </mat-tab>
+                    <mat-tab *ngIf="userService.isLogged" label="Formulas">
+                        <ng-template matTabContent>
+                            <app-saved-formulas [searchValue]="searchValue"
+                                (onPickFormula)="pickExpression($event)"></app-saved-formulas>
+                        </ng-template>
+                    </mat-tab>
+                </mat-tab-group>
+
+                <div class="container-current-text">
+                    <div *ngIf="evaluationErrorMsg" class="evaluation-error">{{evaluationErrorMsg}}</div>
+                    <div class="current-text" [innerHTML]="input.join('')">
+                    </div>
+                </div>
+            </div>
+            <div class="keyboard">
+                <app-calc-btn
+                    *ngFor="let button of buttons"
+                    [ngClass]="button.type"
+                    [isFunction]="isFunction"
+                    [powerModes]="powerModes"
+                    [button]="button"
+                    [variables]="variables"
+                    (onPress)="onPress($event)"
+                    (onAddCustomVariable)="addCustomVariable($event)"
+                    (onAddPower)="addPower()"
+                    (onRemovePower)="removePower()"
+                    (onPickVariable)="pickVariable($event) ">
+                </app-calc-btn>
+            </div>
+        </div>
+    </mat-card>
+</div>

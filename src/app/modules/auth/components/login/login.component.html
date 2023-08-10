@@ -1,0 +1,33 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Log In</h2>
+    <mat-form-field appearance="outline">
+        <mat-label>email</mat-label>
+        <input matInput [required]="false" formControlName="email" placeholder="user@example.com">
+        <mat-error *ngIf="emailFormControl.touched && emailFormControl.hasError('required')">This field is
+            required</mat-error>
+        <mat-error *ngIf="emailFormControl.touched && emailFormControl.hasError('pattern')">This email is
+            invalid</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+        <mat-label>password</mat-label>
+        <input matInput [required]="false" formControlName="password" [type]="hide ? 'password' : 'text'">
+        <button type="button" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <mat-error *ngIf="passwordFormControl.touched && passwordFormControl.hasError('required')">This field is
+            required</mat-error>
+        <mat-error *ngIf="passwordFormControl.touched && passwordFormControl.hasError('minlength')">Password should be
+            at least 4 symbols</mat-error>
+        <mat-error *ngIf="passwordFormControl.touched && passwordFormControl.hasError('maxlength')">Password should not
+            exceed more than 32 symbols</mat-error>
+    </mat-form-field>
+
+    <div class="actions">
+        <button mat-raised-button [disabled]="form.invalid || isLogging">Submit</button>
+    </div>
+
+    <p>If you don not have an account: <a [routerLink]="['/', 'auth', 'register']">Register</a></p>
+    <p>Continue without an account: <a [routerLink]="['/', 'calculator']">Skip</a></p>
+</form>

@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: clamp(180px, 80vw, 380px);
+
+    mat-dialog-content {
+
+        .text {
+            margin-bottom: 16px;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .formula {
+            font-size: 18px;
+            height: 38px;
+            margin-bottom: 32px;
+            max-width: 320px;
+            overflow-x: auto;
+        }
+
+        .formula::-webkit-scrollbar {
+            height: 6px;
+            background-color: rgba(170, 170, 170, 0.2);
+            border-radius: 6px;
+        }
+
+        .formula::-webkit-scrollbar-thumb {
+            border-radius: 6px;
+            background-color: rgba(170, 170, 170, 0.6);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            mat-form-field {
+                margin-bottom: 16px;
+                width: clamp(180px, 80%, 300px);
+            }
+        }
+    }
+
+
+    button {
+        margin: 5px 10px;
+        width: 80px;
+    }
+
+}
+
+.evaluation-error {
+    position: absolute;
+    bottom: 80px;
+    font-size: 15px;
+    color: #d73e3e;
+}
+
+.test-result {
+    position: absolute;
+    bottom: 80px;
+}
