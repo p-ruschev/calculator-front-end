@@ -7,7 +7,7 @@ import { Component, HostBinding, Inject, Renderer2 } from '@angular/core';
     styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-    isDark: boolean = true;
+    isDark: boolean = false;
 
     @HostBinding('class')
     get themeMode(): string {
