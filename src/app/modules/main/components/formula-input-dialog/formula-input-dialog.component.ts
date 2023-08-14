@@ -49,7 +49,7 @@ export class FormulaInputDialogComponent implements OnInit {
 
       this.data.formula.forEach((el: string, i: number) => {
         if (el === variable) {
-          this.resultArray.splice(i, 1, this.form.controls[variable].value.toString())
+          this.resultArray[i] = this.form.controls[variable].value.toString();
         }
       })
     }
@@ -57,7 +57,6 @@ export class FormulaInputDialogComponent implements OnInit {
 
   private handleReturn(): void {
     let formulaStr = this.resultArray.join('')
-    console.log(formulaStr);
     try {
       const strToNum = new Function(`return ${formulaStr}`)();
       this.result = parseFloat(strToNum.toFixed(6));
@@ -90,7 +89,6 @@ export class FormulaInputDialogComponent implements OnInit {
         next: (result: string | boolean) => {
           if (typeof result === 'string') {
             const formula = { ...this.data, comment: result, variables: this.variables }
-            console.log(formula)
             this.mainService.save(formula, 'formulas')
               .pipe(take(1))
               .subscribe({

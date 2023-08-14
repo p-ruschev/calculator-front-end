@@ -122,7 +122,6 @@ export class CalculatorComponent {
             for (let i = this.input.length - 1; i >= 0; i--) {
                 if (this.input[i] === '</sup>') {
                     stepsToRemove++;
-                    console.log(stepsToRemove);
                 } else {
                     break;
                 }

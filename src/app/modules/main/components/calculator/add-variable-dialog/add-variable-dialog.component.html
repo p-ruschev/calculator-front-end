@@ -6,6 +6,7 @@
                 <mat-label>Custom variable</mat-label>
                 <input matInput formControlName="customVariable" type="text">
                 <mat-error *ngIf="form.controls['customVariable'].hasError('required')">This field is required</mat-error>
+                <mat-error *ngIf="form.controls['customVariable'].hasError('maxlength')">This field should not exceed 16 characters</mat-error>
                 <mat-error *ngIf="form.controls['customVariable'].hasError('pattern')">This field should consist only of lower/upper case english or cyrillic alphabet characters, additionally you can add dash(-)</mat-error>
             </mat-form-field>
         </form>
