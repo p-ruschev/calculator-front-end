@@ -19,10 +19,10 @@ import { UserService } from '../../../../shared/services/user.service';
             'enterAnimation', [
             transition(':enter', [
                 style({ height: '0px', opacity: 0 }),
-                animate('300ms ease-in', style({ height: '360px', opacity: 1 }))
+                animate('300ms ease-in', style({ height: '280px', opacity: 1 }))
             ]),
             transition(':leave', [
-                style({ height: '360px', opacity: 1 }),
+                style({ height: '280px', opacity: 1 }),
                 animate('300ms ease-in', style({ height: '0px', opacity: 0 }))
             ])
         ]
@@ -162,7 +162,7 @@ export class CalculatorComponent {
             return;
         }
 
-        if (last !== ')') {
+        if (last !== ')' && last !== '</sup>' && last !== ')</sup>') {
             this.input.push(')</sup>')
             this.formula.push(')')
             this.powerModes--;

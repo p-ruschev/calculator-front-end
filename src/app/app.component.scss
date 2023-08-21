@@ -1,3 +1,10 @@
-mat-drawer-content {
+mat-drawer-container {
     height: calc(100vh - 64px);
+    padding: 10px 0;
+}
+
+@media only screen and (max-width: 440px) {
+    mat-drawer-container {
+        height: calc(100vh - 56px);
+    }
 }

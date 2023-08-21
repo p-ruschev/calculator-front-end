@@ -22,14 +22,11 @@
         }
 
         .formula::-webkit-scrollbar {
-            height: 6px;
-            background-color: rgba(170, 170, 170, 0.2);
-            border-radius: 6px;
+            display: none;
         }
 
         .formula::-webkit-scrollbar-thumb {
-            border-radius: 6px;
-            background-color: rgba(170, 170, 170, 0.6);
+            display: none;
         }
 
         form {

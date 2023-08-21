@@ -48,18 +48,10 @@
                 </div>
             </div>
             <div class="keyboard">
-                <app-calc-btn
-                    *ngFor="let button of buttons"
-                    [ngClass]="button.type"
-                    [isFunction]="isFunction"
-                    [powerModes]="powerModes"
-                    [button]="button"
-                    [variables]="variables"
-                    (onPress)="onPress($event)"
-                    (onAddCustomVariable)="addCustomVariable($event)"
-                    (onAddPower)="addPower()"
-                    (onRemovePower)="removePower()"
-                    (onPickVariable)="pickVariable($event) ">
+                <app-calc-btn *ngFor="let button of buttons" [ngClass]="button.type" [isFunction]="isFunction"
+                    [powerModes]="powerModes" [button]="button" [variables]="variables" (onPress)="onPress($event)"
+                    (onAddCustomVariable)="addCustomVariable($event)" (onAddPower)="addPower()"
+                    (onRemovePower)="removePower()" (onPickVariable)="pickVariable($event) ">
                 </app-calc-btn>
             </div>
         </div>

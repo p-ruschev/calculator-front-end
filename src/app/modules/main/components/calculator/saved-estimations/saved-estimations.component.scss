@@ -5,14 +5,11 @@
     }
 
     .saved-container::-webkit-scrollbar {
-        width: 6px;
-        background-color: rgba(170, 170, 170, 0.2);
-        border-radius: 6px;
+        display: none;
     }
 
     .saved-container::-webkit-scrollbar-thumb {
-        border-radius: 6px;
-        background-color: rgba(170, 170, 170, 0.6);
+        display: none;
     }
 
 
@@ -55,14 +52,11 @@
             }
 
             .text::-webkit-scrollbar {
-                height: 6px;
-                background-color: rgba(170, 170, 170, 0.2);
-                border-radius: 6px;
+                display: none;
             }
 
             .text::-webkit-scrollbar-thumb {
-                border-radius: 6px;
-                background-color: rgba(170, 170, 170, 0.6);
+                display: none;
             }
 
 

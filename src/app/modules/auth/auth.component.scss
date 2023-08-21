@@ -1,17 +1,24 @@
 .container {
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: calc(100% - 64px);
+    height: 100%;
+    align-items: center;
 
     mat-card {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        width: 360px;
-        height: 560px;
-        padding: 20px;
+        width: clamp(340px, 80vw, 384px);
+        max-height: 560px;
+        padding: 30px;
         box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+}
+
+@media only screen and (max-height: 768px) {
+    .container {
+        height: auto;
+        align-items: normal;
+
+        mat-card {
+            margin-top: 8px;
+        }
     }
 }

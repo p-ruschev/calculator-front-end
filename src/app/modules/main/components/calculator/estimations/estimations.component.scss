@@ -6,14 +6,11 @@
 }
 
 .tab-content::-webkit-scrollbar {
-    width: 6px;
-    background-color: rgba(170, 170, 170, 0.2);
-    border-radius: 6px;
+    display: none;
 }
 
 .tab-content::-webkit-scrollbar-thumb {
-    border-radius: 6px;
-    background-color: rgba(170, 170, 170, 0.6);
+    display: none;
 }
 
 [menu-opened="true"] {
@@ -41,14 +38,11 @@
     }
 
     .text::-webkit-scrollbar {
-        height: 6px;
-        background-color: rgba(170, 170, 170, 0.2);
-        border-radius: 6px;
+        display: none;
     }
 
     .text::-webkit-scrollbar-thumb {
-        border-radius: 6px;
-        background-color: rgba(170, 170, 170, 0.6);
+        display: none;
     }
 
     &:hover {

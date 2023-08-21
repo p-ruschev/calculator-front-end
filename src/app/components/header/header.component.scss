@@ -19,8 +19,8 @@ button {
     }
 }
 
-.logo {
-    font-size: 20px;
+.logo, .home {
+    scale: 1.2;
 }
 
 .theme {
@@ -41,10 +41,6 @@ button {
             font-size: 14px;
             padding-left: 2px;
         }
-    }
-
-    .logo {
-        font-size: 14px;
     }
 
 }
